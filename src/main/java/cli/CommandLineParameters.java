@@ -65,6 +65,24 @@ public class CommandLineParameters {
     @Parameter(names = {"-s", "--page-size"}, description = "Set wkhtmltopdf paper size to: A4, Letter, etc. (default A4)")
     private String pageSize = "A4";
 
+    @Parameter(names = {"-ph", "--page-height"}, description = "Set wkhtmltopdf paper height")
+    private String pageHeight = "";
+
+    @Parameter(names = {"-pw", "--page-width"}, description = "Set wkhtmltopdf paper width")
+    private String pageWidth = "";
+
+    @Parameter(names = {"-mt", "--margin-top"}, description = "Set wkhtmltopdf top margin")
+    private String marginTop = "";
+
+    @Parameter(names = {"-mb", "--margin-bottom"}, description = "Set wkhtmltopdf bottom margin")
+    private String marginBottom = "";
+
+    @Parameter(names = {"-ml", "--margin-left"}, description = "Set wkhtmltopdf left margin")
+    private String marginLeft = "";
+
+    @Parameter(names = {"-mr", "--margin-right"}, description = "Set wkhtmltopdf right margin")
+    private String marginRight = "";
+
     public List<String> getFiles() {
         return files;
     }
@@ -167,5 +185,53 @@ public class CommandLineParameters {
 
     public void setPageSize(String pageSize) {
         this.pageSize = pageSize;
+    }
+
+    public String getPageHeight() {
+        return pageHeight;
+    }
+
+    public void setPageHeight(String pageHeight) {
+        this.pageHeight = pageHeight;
+    }
+
+    public String getPageWidth() {
+        return pageWidth;
+    }
+
+    public void setPageWidth(String pageWidth) {
+        this.pageWidth = pageWidth;
+    }
+
+    public String getMarginTop() {
+        return marginTop;
+    }
+
+    public void setMarginTop(String marginTop) {
+        this.marginTop = marginTop;
+    }
+
+    public String getMarginBottom() {
+        return marginBottom;
+    }
+
+    public void setMarginBottom(String marginBottom) {
+        this.marginTop = marginBottom;
+    }
+
+    public String getMarginLeft() {
+        return marginLeft;
+    }
+
+    public void setMarginLeft(String marginLeft) {
+        this.marginLeft = marginLeft;
+    }
+
+    public String getMarginRight() {
+        return marginRight;
+    }
+
+    public void setMarginRight(String marginRight) {
+        this.marginRight = marginRight;
     }
 }

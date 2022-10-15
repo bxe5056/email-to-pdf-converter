@@ -110,14 +110,43 @@ public class Main {
             extParams.add("--proxy");
             extParams.add(proxy.toLowerCase());
             Logger.debug("Use default proxy %s", proxy);
-        } else if (!Strings.isNullOrEmpty(cli.getProxy())){
+        } else if (!Strings.isNullOrEmpty(cli.getProxy())) {
             extParams.add("--proxy");
             extParams.add(cli.getProxy());
             Logger.debug("Use proxy from parameters %s", cli.getProxy());
         }
 
-        extParams.add("--page-size");
-        extParams.add(cli.getPageSize());
+        if (!cli.getPageWidth().isEmpty() && !cli.getPageHeight().isEmpty()) {
+            extParams.add("--page-width");
+            extParams.add(cli.getPageWidth());
+
+            extParams.add("--page-height");
+            extParams.add(cli.getPageHeight());
+        } else {
+            extParams.add("--page-size");
+            extParams.add(cli.getPageSize());
+        }
+
+        if (!cli.getMarginTop().isEmpty()) {
+            extParams.add("--margin-top");
+            extParams.add(cli.getMarginTop());
+        }
+
+        if (!cli.getMarginBottom().isEmpty()) {
+            extParams.add("--margin-top");
+            extParams.add(cli.getMarginBottom());
+        }
+
+        if (!cli.getMarginLeft().isEmpty()) {
+            extParams.add("--margin-left");
+            extParams.add(cli.getMarginLeft());
+        }
+
+        if (!cli.getMarginRight().isEmpty()) {
+            extParams.add("--margin-right");
+            extParams.add(cli.getMarginRight());
+        }
+
 
         try {
             MimeMessageConverter.convertToPdf(in, out, cli.isHideHeaders(), cli.isExtractAttachments(), cli.getExtractAttachmentsDir(), extParams);

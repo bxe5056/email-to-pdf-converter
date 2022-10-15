@@ -52,7 +52,20 @@ Usage: EmailToPDFConverter [options] <email-file>
       will be placed alongside the email File.
     -s, --page-size
       Set wkhtmltopdf paper size to: A4, Letter, etc. (default A4)
+      This value is ignored if page-height or page-width are used
       Default: A4
+    -ph, --page-height
+      Set wkhtmltopdf page height to a Real-Unit Number
+    -pw, --page-width
+      Set wkhtmltopdf page width to a Real-Unit Number
+    -mt, --margin-top
+      Set wkhtmltopdf top margin to a Real-Unit Number
+    -mb, --margin-bottom
+      Set wkhtmltopdf bottom margin to a Real-Unit Number
+    -ml, --margin-left
+      Set wkhtmltopdf left margin to a Real-Unit Number
+    -mr, --margin-right
+      Set wkhtmltopdf right margin to a Real-Unit Number
     -p, --proxy
       Proxy (e.g. "http://10.64.1.74:81"). If "auto" is supplied the default
       system proxy will be used.
